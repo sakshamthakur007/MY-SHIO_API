@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 require('dotenv').config()
 const cookieParser = require('cookie-parser')
 const fileUpload = require('express-fileupload')
-
+const cors = require('cors');
 const app = express();
 app.use(express.json())             
 app.use(cookieParser())
@@ -14,7 +14,7 @@ app.use(cors({
     origin: 'http://localhost:3000', // Replace with your frontend URL
     credentials: true, // Allow credentials (cookies)
 }));
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 
 app.get('/',(req,res)=>{
     res.json({msg:"This is Example"})
