@@ -10,7 +10,10 @@ app.use(cookieParser())
 app.use(fileUpload({
     useTempFiles:true
 }))
-
+app.use(cors({
+    origin: 'http://localhost:3000', // Replace with your frontend URL
+    credentials: true, // Allow credentials (cookies)
+}));
 const PORT = process.env.PORT || 5000;
 
 app.get('/',(req,res)=>{
